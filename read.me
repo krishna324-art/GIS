@@ -1,0 +1,56 @@
+AI-Powered Knowledge Graph to Manim Animation Automation
+Overview
+
+This project automates the creation of educational videos from textbooks using AI and Manim. A user can input a concept, and the system will:
+
+Search the book content for relevant information using semantic search.
+
+Generate slides and narration from the retrieved text.
+
+Convert the slides into an animated educational video using Manim.
+
+Save slides as JSON and PowerPoint for reference.
+
+The system can be applied to domains like GIS, Space Technology, Data Structures, and Algorithms.
+
+Features
+
+PDF to Text Extraction: Reads textbooks (PDF) and extracts content.
+
+Semantic Search: Uses Sentence Transformers + FAISS to find relevant content for a user query.
+
+Slide Generation: Creates structured slides with title, bullet points, and narration.
+
+PPTX Export: Saves slides as PowerPoint for offline viewing.
+
+Manim Video Animation: Converts slides into an animated educational video.
+
+Dynamic Orchestration: User inputs a concept → receives slides + video automatically.
+
+Technology Stack
+
+Python Libraries: pypdf, sentence-transformers, faiss-cpu, python-pptx, manim
+
+Embedding Model: all-MiniLM-L6-v2 from Sentence Transformers
+
+Video Animation: Manim Community Edition v0.19.0
+
+Optional Web Interface: Gradio / Streamlit for interactive queries
+
+How It Works
+
+Load PDF: Extract text from book.
+
+Chunking: Split text into smaller concept chunks.
+
+Embedding & Indexing: Convert chunks to embeddings and build FAISS index.
+
+Query Search: Input a concept → retrieve top relevant chunks.
+
+Slide Generation: Convert retrieved text into slides (title + bullets + narration).
+
+Export Slides: Save as JSON and PPTX.
+
+Render Video: Generate animated video using Manim.
+
+Display/Share: Video can be displayed in Colab or a web interface.
